@@ -35,7 +35,7 @@ class bigtop_toolchain::env {
     'Ubuntu': {
       $javahome = "/usr/lib/jvm/${java}-openjdk-$arch"
     }
-    'Fedora','Centos','RedHat','Amazon','Rocky','openEuler': {
+    'Fedora','Centos','RedHat','Amazon','Rocky','openEuler', 'BigCloud': {
       $javahome = "/usr/lib/jvm/${java}"
     }
     'OpenSuSE' : {

@@ -162,7 +162,7 @@ class bigtop_toolchain::packages {
       "nasm",
       "yasm"
     ] }
-    /openEuler/: { $pkgs = [
+    /(openEuler|BigCloud)/: { $pkgs = [
        "unzip",
        "cmake",
        "rsync",
@@ -296,7 +296,8 @@ class bigtop_toolchain::packages {
     }
   }
   package { $pkgs:
-    ensure => installed
+    ensure => installed,
+    provider => 'dnf'
   }
 
   # Some bigtop packages use `/usr/lib/rpm/redhat` tools

@@ -60,7 +60,7 @@ class bigtop_toolchain::renv {
   }
 
   #BIGTOP-3967: openEuler not support PowerPC currently.
-  if ($operatingsystem == 'openEuler'){
+  if ($operatingsystem == 'openEuler' or $operatingsystem == 'BigCloud'){
     if ($architecture == "aarch64") {
         $pandocurl = "https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-linux-arm64.tar.gz"
         $pandoctar = "pandoc-2.19.2-linux-arm64.tar.gz"
@@ -82,7 +82,7 @@ class bigtop_toolchain::renv {
   # Then Install required R packages dependency
   if (($operatingsystem == 'Ubuntu' and versioncmp($operatingsystemmajrelease, '18.04') <= 0) or
       ($operatingsystem == 'Debian' and versioncmp($operatingsystemmajrelease, '10') <= 0) or
-      ($operatingsystem == 'openEuler')) {
+      ($operatingsystem == 'openEuler' or $operatingsystem == 'BigCloud')) {
     $rurl = "https://cran.r-project.org/src/base/R-3/"
     $rfile = "R-3.6.3.tar.gz"
     $rdir = "R-3.6.3"
